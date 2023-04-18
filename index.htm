@@ -5,12 +5,193 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil yona</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="index.css" />
   </head>
   <header class="header">
-    <img src="sarahColRoulé-removebg-preview.jpg" alt="sarah" />
-    <img src="logoYonaBlack.PNG" alt="logo" />
-    <img src="maelysMicro-removebg-preview.jpg" alt="maelys" />
+    <div class="image-container">
+    <img id="sarah" src="sarahColRoulé-removebg-preview.jpg" alt="sarah" />
+  </div>
+    <img id="logo" src="logoYonaBlack.PNG" alt="logo" />
+    <div class="image-container2">
+    <img id="mae" src="maelysMicro-removebg-preview.jpg" alt="maelys" />
+    </div>
   </header>
-  <body></body>
+  <body>
+    <div class="transition">
+      <hr></hr>
+      <img src="feuille.PNG" alt="feuillets" />
+      <img src="feuille3.PNG" alt="feuillets" />
+      <hr></hr>
+    </div>
+    <div class="presentation">
+      <img id="prelude" src="preludeYona.PNG" alt="prelude" />
+      <p>
+        Sarah et Maë vous transportent dans leur univers aux couleurs pop / Rock
+        alliant reprises et compositions. Deux voix puissantes et sensibles
+        agrémentées de piano et guitare pour une ambiance acoustique et
+        chaleureuse assurée. La complicité des deux musiciennes et leur amour
+        pour la musique ne peut que charmer leurs auditeurs. Si vous souhaitez
+        offrir à votre soirée ou événement une touche de paillettes et de
+        luminosité n'hésitez plus une seule seconde:
+        <span class="conclusion">C'est Yona qu'il vous faut</span>
+      </p>
+    </div>
+    <!-- <div class="transition">
+      <hr></hr>
+      <img src="feuille.PNG" alt="feuillets" />
+      <img src="feuille3.PNG" alt="feuillets" />
+      <hr></hr>
+    </div> -->
+    <div class="portrait">
+      <div class="portraitMae">
+        <h1>Maë</h1>
+      <img src="image00012.jpeg" alt="maelys" />
+      <p>
+        A 12 ans Maë fait son premier concert et réalise que la musique est bien plus qu'un passe-temps pour elle.
+        Dès lors elle commence à prendre des cours de chant puis à travailler avec des professionnels de la musique (intermittents et producteurs) 
+        puis intègre la Music Academy Internationale durant 2 ans. Influencée initialement par le Rock, Maë sait aussi s'adapter aux attentes de son public.
+        Bien décidée à vivre de sa passion, elle espère apporter à ses auditeurs le réconfort que la musique lui a suscité à travers ses compositions 
+        et faire danser son public grâce à ses reprises. Un mélange intimiste et festif qui fait son charme en tant qu'artiste.
+      </p>
+      <div class="fleur">
+      <img  src="fleur1.PNG" alt="plume" />
+    </div>
+    </div>
+    <div class="portraitSarah">
+      <h1>Sarah</h1>
+      <img src="SarahAssiseAvecGuitare.PNG" alt="maelys" />
+      <p>
+        Bercée depuis petite par la poésie, Sarah est avant tout une passionnée d'écriture et de chansons françaises.
+        A 14 ans elle se découvre une vocation pour le chant et la guitare. Elle devient alors auteure, compositrice, interprète et présente ses compositions sur les réseaux.
+        Elle intègre plus tard un groupe de reprises gospel et partage pour la première fois sa passion avec le public.
+        Son gout pour la scène la pousse à effectuer une formation à la Music Academy Internationale ou elle rencontre Maë et se revèle comme véritable artiste polyvalente.
+        Guitare en main, Sarah rythme les émotions du public et partage sa sensibilité dans une ambiance chaleureuse.
+      </p>
+      <div class="fleur">
+        <img  src="fleur1.PNG" alt="plume" />
+      </div>
+    </div>
+    </div>
+    <div class="transition">
+      <hr></hr>
+      <img src="feuille.PNG" alt="feuillets" />
+      <img src="feuille3.PNG" alt="feuillets" />
+      <hr></hr>
+    </div>
+    <div class="dates">
+      <div class="title">
+        <img src="badge.PNG" alt="badge" />
+      <h1>Dates de représentations publiques</h1>
+      <img src="badge.PNG" alt="badge" />
+    </div>
+  <table>
+    <tr>
+      <th>Dates</th>
+      <th>Lieu</th>
+      <th>Heure</th>
+      <th>Tarif</th>
+    </tr>
+    <tbody id="event-table-body">
+    </tbody>
+  </table>
+
+  <script>
+    // Utiliser fetch pour récupérer les données du fichier JSON
+    fetch('date.json')
+      .then(response => response.json())
+      .then(data => {
+        // Récupérer le tableau d'objets d'événements depuis les données JSON
+        var events = data.events;
+        
+        // Boucler à travers chaque objet d'événement et créer une nouvelle ligne dans le tableau HTML
+        var tableBody = document.getElementById('event-table-body');
+        events.forEach(event => {
+          var row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${event.date}</td>
+            <td>${event.lieu}</td>
+            <td>${event.heure}</td>
+            <td>${event.tarif}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      })
+      .catch(error => console.error('Erreur de récupération des données JSON:', error));
+  </script>
+    </div>
+    <div class="transition">
+      <hr></hr>
+      <img src="feuille.PNG" alt="feuillets" />
+      <img src="feuille3.PNG" alt="feuillets" />
+      <hr></hr>
+    </div>
+    <div class="tarifs">
+      <div class="title">
+        <img src="badge.PNG" alt="badge" />
+        <h1>Tarifs prestation privée</h1>
+        <img src="badge.PNG" alt="badge" />
+      </div>
+      <div class="detailsTarif">
+      <p class="line1">Le coût global du plateau artisitique est de 400€*</p>
+      <i><p class="line2">Ce prix comprend le matériel et la prestation - durée environ 2 heures</p></i>
+    </div>
+    </div>
+    <div class="transition">
+      <hr></hr>
+      <img src="feuille.PNG" alt="feuillets" />
+      <img src="feuille3.PNG" alt="feuillets" />
+      <hr></hr>
+    </div>
+    <div>
+      <div class="titleGalerie">
+        <img src="badge.PNG" alt="badge" />
+        <h1>Galerie</h1>
+        <img src="badge.PNG" alt="badge" />
+      </div>
+      <!-- HTML -->
+<div class="containerPhotos">
+  <div class="photoLigne1">
+    <img src="photo4.PNG" alt="photo1" />
+    <img src="photo2.PNG" alt="photo2" />
+    <img src="photo3.PNG" alt="photo3" />
+</div>
+  <div class="photoLigne2">
+    <img src="photo5.PNG" alt="photo5" />
+    <img src="photo8.PNG" alt="photo8" />
+    <img src="photo4.PNG" alt="photo9" />
+  </div>
+  <div class="photoLigne3">
+  <img src="photo6.PNG" alt="photo6" />
+  <img class="image34" src="image00034.jpeg" alt="photo10" />
+  <img src="photo7.PNG" alt="photo7" />
+  <img src="photo1.PNG" alt="photo4" />
+  </div>
+</div>
+<div class="transition">
+  <hr></hr>
+  <img src="feuille.PNG" alt="feuillets" />
+  <img src="feuille3.PNG" alt="feuillets" />
+  <hr></hr>
+</div>
+<div class="titleGalerie">
+  <img src="badge.PNG" alt="badge" />
+  <h1>Réseaux sociaux</h1>
+  <img src="badge.PNG" alt="badge" />
+</div>
+<div class="socialNetwork">
+  <a href="https://www.instagram.com/officielyona/?igshid=YmMyMTA2M2Y%3D" target="blank"><img src="insta.PNG" alt="insta" /></a>
+  <a href="https://www.facebook.com/profile.php?id=100089957140851" target="blank"><img src="facebook.PNG" alt="facebook" /></a>
+  <a href="https://www.youtube.com/@yonaofficiel" target="blank"><img src="youtube.PNG" alt="youtube" /></a>
+  <a href="https://twitter.com/yona_officiel?t=wP_7uW0tToLxjjC0vnPsSw&s=09" target="blank"><img src="twitter.PNG" alt="spotify" /></a>
+  <a href=""><img src="tiktok.PNG" alt="tiktok" /></a>
+  <a href=""><img src="contact.PNG" alt="contact" /></a>
+</div>
+
+  </body>
 </html>
