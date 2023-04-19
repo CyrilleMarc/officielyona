@@ -220,7 +220,7 @@ hr {
   font-family: "Great Vibes", cursive;
   color: #bca15d;
   margin: 50px auto;
-  width: 90%;
+  width: 60%;
 }
 .dates h1 {
   text-align: center;
@@ -311,7 +311,7 @@ hr {
 
 .videoContainer {
   display: flex;
-  width: 60%;
+  max-width: 80%;
   margin: 0px auto 50px;
   border-radius: 10px;
 }
@@ -321,7 +321,7 @@ hr {
   justify-content: center;
   align-items: center;
   border: 5px solid #bca15d;
-  width: 50%;
+  max-width: 50%;
   margin: 0px 10px 0px 10px;
   padding: 20px;
 }
@@ -339,17 +339,19 @@ hr {
   margin: 0px 50px;
 }
 
-.containerPhotos {
+/* .containerPhotos {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 90%;
+  max-width: 80%;
   height: auto;
   background-color: #000;
   margin: 20px auto;
   border-radius: 10px;
-}
+  background-color: red;
+} */
 
 .photoLigne1 {
   display: flex;
@@ -358,6 +360,7 @@ hr {
   max-width: 100%;
   height: auto;
   margin: 50px auto 0px;
+  background-color: red;
 }
 
 .photoLigne1 img {
@@ -415,3 +418,80 @@ hr {
 }
 
 /* CSS */
+
+/* Media Queries */
+
+@media (max-width: 750px) {
+  body,
+  html {
+    width: 100%;
+  }
+  .header {
+    width: auto;
+    height: auto;
+  }
+
+  .presentation p {
+    font-size: 25px;
+  }
+
+  .portrait .portraitMae img {
+    width: 90%;
+    height: auto;
+    margin: 0px 0px 20px;
+  }
+
+  .portrait .portraitSarah img {
+    width: 90%;
+    height: auto;
+    margin: 0px 0px 20px;
+  }
+
+  .portrait p {
+    font-family: "Great Vibes", cursive;
+    color: #bca15d;
+    font-size: 25px;
+    margin: 0px 0px;
+    padding: 0px;
+  }
+  .portraitSarah {
+    padding: 5px;
+    width: 90%;
+    margin: 10px 0px;
+  }
+
+  .portraitMae {
+    padding: 5px;
+    width: 90%;
+  }
+
+  .photoLigne1 {
+    flex-direction: column;
+  }
+  .photoLigne2 {
+    flex-direction: column;
+  }
+  .photoLigne3 {
+    flex-direction: column;
+  }
+  .socialNetwork {
+    display: flex;
+  }
+  .dates h1 {
+    text-align: center;
+    font-size: 40px;
+    padding: 5px;
+  }
+  .portrait {
+    flex-direction: column;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .video {
+    max-width: 90%;
+    margin: 10px 0px 30px 0px;
+  }
+}
