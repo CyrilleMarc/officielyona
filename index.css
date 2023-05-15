@@ -416,6 +416,22 @@ hr {
   height: auto;
   margin: 0px 20px;
 }
+.cyroLink {
+  text-align: center;
+  padding: 30px;
+}
+.cyroLink a {
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+  color: #bca15d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cyroLink #click {
+  width: 100px;
+}
 
 /* CSS */
 
@@ -516,21 +532,5 @@ hr {
   .video {
     max-width: 90%;
     margin: 10px 0px 30px 0px;
-  }
-  .cyroLink {
-    text-align: center;
-    padding: 30px;
-  }
-  .cyroLink a {
-    text-decoration: none;
-    font-family: "Oswald", sans-serif;
-    color: #bca15d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .cyroLink #click {
-    width: 100px;
   }
 }
